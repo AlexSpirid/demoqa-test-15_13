@@ -6,6 +6,7 @@ import pages.components.CalendarComponent;
 import pages.components.SubmittingFormComponent;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -29,48 +30,48 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage setFirstName(String value) {
-        firstNameInput.setValue(value);
+        firstNameInput.shouldBe(visible).setValue(value);
         return this;
     }
 
     public RegistrationFormPage setLastName(String value) {
-        lastNameInput.setValue(value);
+        lastNameInput.shouldBe(visible).setValue(value);
         return this;
     }
 
     public RegistrationFormPage setEmail(String value) {
-        emailInput.setValue(value);
+        emailInput.shouldBe(visible).setValue(value);
         return this;
     }
 
     public RegistrationFormPage setGender(String value) {
-        $("#genterWrapper").$(byText(value)).click();
+        $("#genterWrapper").$(byText(value)).shouldBe(visible).click();
         return this;
     }
 
     public RegistrationFormPage setNumber(String value) {
-        $("#userNumber").setValue(value);
+        $("#userNumber").shouldBe(visible).setValue(value);
         return this;
     }
 
     public RegistrationFormPage setBirthDate(String day, String month, String year) {
-        $("#dateOfBirthInput").click();
+        $("#dateOfBirthInput").shouldBe(visible).click();
         calendarComponent.setDate(day, month, year);
         return this;
     }
 
     public RegistrationFormPage setSubjects(String value) {
-        $("#subjectsInput").setValue(value).pressEnter();
+        $("#subjectsInput").shouldBe(visible).setValue(value).pressEnter();
         return this;
     }
 
     public RegistrationFormPage setHobbies(String value) {
-        $("#hobbiesWrapper").$(byText(value)).click();
+        $("#hobbiesWrapper").$(byText(value)).shouldBe(visible).click();
         return this;
     }
 
     public RegistrationFormPage setPicture(String value) {
-        $("#uploadPicture").uploadFromClasspath(value);
+        $("#uploadPicture").shouldBe(visible).uploadFromClasspath(value);
         return this;
     }
 
@@ -80,7 +81,7 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage clickSubmit() {
-        $("#submit").click();
+        $("#submit").shouldBe(visible).click();
         return this;
     }
 
