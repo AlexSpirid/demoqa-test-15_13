@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormPage {
     private final static String TITLE_TEXT = "Student Registration Form";
-    private CalendarComponent calendarComponent = new CalendarComponent();
-    private SubmittingFormComponent resultsModal = new SubmittingFormComponent();
-    private AddressComponent adressComponent = new AddressComponent();
-    private SelenideElement
-            firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            emailInput = $("#userEmail");
+    private final CalendarComponent calendarComponent = new CalendarComponent();
+    private final SubmittingFormComponent resultsModal = new SubmittingFormComponent();
+    private final AddressComponent adressComponent = new AddressComponent();
+    private final SelenideElement
+            firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement emailInput = $("#userEmail");
 
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
@@ -79,7 +79,7 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage clickSubmit () {
+    public RegistrationFormPage clickSubmit() {
         $("#submit").click();
         return this;
     }

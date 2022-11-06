@@ -36,7 +36,7 @@ public class PracticeFormTest extends TestBase {
     }
 
     @Test
-     void fillFormWithMinimumDataTest() {
+    void fillFormWithMinimumDataTest() {
         registrationFormPage.openPage()
                 .setFirstName(User.firstName)
                 .setLastName(User.lastName)
